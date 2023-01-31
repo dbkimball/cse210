@@ -13,7 +13,7 @@ public class Journal
     public void AddEntry(string prompt, string entry)
     {
         string date = theCurrentTime.ToShortDateString();
-        string formattedEntry = ($"Date: {date} - Prompt: {prompt}: \n{entry}");
+        string formattedEntry = ($"Date: {date} - Prompt: {prompt}: \n>{entry}");
         _entries.Add(formattedEntry);
     }
     public void DisplayEntry()

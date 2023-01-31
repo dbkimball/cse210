@@ -22,38 +22,37 @@ class Program
             Console.WriteLine("5. Quit");
             Console.WriteLine("What would you like to do?  ");
 
-            //convert user input to an int
-            int choice = Convert.ToInt32((Console.ReadLine()));
+            string choice = Console.ReadLine().Trim();
 
             string randomPrompt = promptGenerator.ChooseRandomPrompt();
 
-            if (choice ==1)
+            if (choice == "1")
             {
                 Console.WriteLine(randomPrompt);
                 string entry = Console.ReadLine();
 
                 Journal.AddEntry(randomPrompt, entry);
             }
-            else if(choice ==2)
+            else if(choice == "2")
             {
                 Journal.DisplayEntry();
             }
-            else if (choice ==3)
+            else if (choice == "3")
             {
                 Journal.LoadJournalFile();
             }
-            else if (choice ==4)
+            else if (choice =="4")
             {
                 Journal.SaveJournalFile();
             }
 
-            else if (choice ==5)
+            else if (choice =="5")
             {
                 run = false;
             }
             else 
             {
-                Console.WriteLine($"\"{choice}\" is not a valid selection.  Please enter a number between 1 - 5.");
+                Console.WriteLine($"\"{choice}\" is not a valid selection.  Please enter something between 1 - 5.");
             }
         }
     }
