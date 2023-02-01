@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using System.Text;
 
 public class Journal
 {
@@ -13,9 +12,11 @@ public class Journal
     public void AddEntry(string prompt, string entry)
     {
         string date = theCurrentTime.ToShortDateString();
-        string formattedEntry = ($"Date: {date} - Prompt: {prompt}: \n>{entry}");
+        string formattedEntry = ($"Date: {date} - Prompt: {prompt}: \n{entry}");
         _entries.Add(formattedEntry);
+        
     }
+
     public void DisplayEntry()
     {
        foreach (string line in _entries)
@@ -23,39 +24,55 @@ public class Journal
             Console.WriteLine(line);
             Console.WriteLine();
        }
+       WaitForKey();
     }
       
     public void SaveJournalFile()
     {
         //only checks the relative path to the .exe
         Console.WriteLine("What would you like to name the file? ");
-        _filename = Console.ReadLine();
+        string _filename = Console.ReadLine();
         if (!File.Exists(_filename))
-        {
-            File.CreateText(_filename);
-            using (StreamWriter textfile = new StreamWriter( _filename, true))
+        {        
+            using (StreamWriter textfile = new StreamWriter( _filename))
             {
                 foreach (string line in _entries)
-                textfile.WriteLine(line);
-            
-                textfile.Flush();
+                {
+                    textfile.WriteLine(line);
+                }
             }
-        }
+        } 
+        WaitForKey();     
     }
 
     public void LoadJournalFile()
     {
         Console.WriteLine("What is the filename? ");
-        string loadFile = Console.ReadLine();
-        _filename = loadFile;
-
-        _entries.Clear();
-
-        string[] loadedEntries = File.ReadAllLines(_filename); 
-        foreach (string loadEntry in loadedEntries)
+        _filename = Console.ReadLine();
+        
+        if (!File.Exists(_filename))
         {
-            _entries.Add(loadEntry);
+            Console.WriteLine("Sorry, that filename does not exist.");
         }
+        else
+        {
+            _entries.Clear();
+
+            string[] loadedEntries = File.ReadAllLines(_filename); 
+            foreach (string loadEntry in loadedEntries)
+            {
+                _entries.Add(loadEntry);
+            }
+        }
+        WaitForKey();
+    }
+
+    //added a waitforkey method
+    public void WaitForKey()
+    {
+        Console.ForegroundColor = ConsoleColor.DarkGray;
+        Console.WriteLine("\nPress any key...");
+        Console.ReadKey(true);
     }
 
 }
