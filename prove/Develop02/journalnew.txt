@@ -1,6 +1,0 @@
-Date: 1/31/2023 - Prompt: If you could say anything to your 20 year old self, what would it be and why?: 
->writeing
-mulitple
-lines of code
-to test this program
-

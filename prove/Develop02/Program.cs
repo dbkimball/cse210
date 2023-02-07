@@ -29,6 +29,7 @@ class Program
 
             if (choice == "1")
             {
+                Console.WriteLine("This Journal can except multiple lines of text, write as much as you wish in your journal and then type 'exit' when finished.");
                 Console.WriteLine(randomPrompt);
                 string entry = "";
                 
