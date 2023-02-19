@@ -64,8 +64,6 @@ class Scripture
             int randomIndex = randomGenerator.Next(0, _words.Count());
 
             _words[randomIndex].Hide();
-
-
         }
 
     }

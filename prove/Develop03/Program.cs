@@ -24,18 +24,24 @@ class Program
         scripture._reference = reference.GetReference();
 
         //display original scripture
+        // scripture.GetScriptureText(); // Print original scripture
+        // Console.WriteLine();
+        // Console.WriteLine();
 
+        // Console.WriteLine("Press enter to continue or type 'quit' to finish:");
         
-        Console.WriteLine("Press enter to continue or type 'quit' to quit");
-        Console.ReadLine();
-
+                
         while(scripture.FullyHidden())
         {
-            scripture.GetScriptureText(); // Print original scripture
-            userInput = Console.ReadLine(); // Waiting for enter key
-            Console.Clear(); // Clear Console
-            scripture.HideRandomWords(3); // Hide random words, int is number of words to hide
-
+            scripture.GetScriptureText();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Press enter to continue or type 'quit' to finish:");
+            userInput = Console.ReadLine();
+            Console.Clear(); // Clear Console 
+            scripture.HideRandomWords(8); 
+            
         }
-    }
-}
+    }    
+
+}    
