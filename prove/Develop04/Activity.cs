@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 
 public class Activity
 {
@@ -34,6 +35,26 @@ public class Activity
         Console.Write("Select a choice from the menu: ");
 
     }
+    // public void AnimationText (int seconds)
+    // {
+    //     DateTime startTime = DateTime.Now;
+    //     DateTime endTime = startTime.AddSeconds(seconds);
+    //     int i = 0;
+    //     while (DateTime.Now < endTime)
+    //     {
+    //         string s = _spinner[i];
+    //         Console.Write(s);
+    //         Thread.Sleep(500);
+    //         Console.Write("\b \b");
+    //         i++;
+           
+    //         if (i >= _spinner.Count)
+    //         {
+    //             i = 0;
+    //         }
+            
+    //     }
+    // }
     public void Spinner(int seconds)
     {
 
@@ -47,7 +68,7 @@ public class Activity
         _spinner.Add("-");
         _spinner.Add("\\");
 
-
+        //Console.CursorVisible = false;
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(seconds);
         int i = 0;
@@ -56,13 +77,16 @@ public class Activity
             string s = _spinner[i];
             Console.Write(s);
             Thread.Sleep(500);
+            //Console.Clear();
             Console.Write("\b \b");
             i++;
+            //Console.CursorVisible = true;
 
             if (i >= _spinner.Count)
             {
                 i = 0;
             }
+            
         }
     }
     public void GetReady(int seconds)
