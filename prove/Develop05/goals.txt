@@ -1,0 +1,3 @@
+Simple Goal: finish hw, finish hw assignment for cse210, 100, false
+Eternal Goal: study scriptures, read scriptures every day, 50
+Checklist Goal: attend temple, attend temple every month, 100, 3, 500, 0, false
