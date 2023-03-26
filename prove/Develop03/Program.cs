@@ -31,7 +31,7 @@ class Program
         // Console.WriteLine("Press enter to continue or type 'quit' to finish:");
         
                 
-        while(scripture.FullyHidden())
+        while(scripture.FullyHidden() && userInput != "quit")
         {
             scripture.GetScriptureText();
             Console.WriteLine();
