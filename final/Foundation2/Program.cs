@@ -22,6 +22,7 @@ class Program
         Order order2 = new Order();
         Address address2 = new Address("56 Crofts Road", "Bemm River", "Victoria", "Australia");
         Customer cust2 = new Customer("Scott Knight", address2);
+        order2.AddItem(prod1);
         order2.AddItem(prod2);
         order2.AddItem(prod3);
         
