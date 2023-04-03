@@ -12,8 +12,8 @@ public class Comment{
         _comment = comment;
     }
 
-    public void GetVideo()
+    public void GetCommentInfo()
     {
-        Console.WriteLine($"    {_userName}: {_comment}");
+        Console.WriteLine($"  UserName: {_userName} - {_comment}");
     }
 }

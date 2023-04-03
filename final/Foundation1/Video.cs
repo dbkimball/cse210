@@ -21,16 +21,21 @@ public class Video
         Comment newComment = new Comment(username, comment);
         _comments.Add(newComment);
     }
+    public int GetNumOfComments()
+    {
+        return _comments.Count();
+    }
     public void GetVideo()
     {   
         string format = "00";
         string seconds;
         int remainingSeconds = _length % 60;
         seconds = remainingSeconds.ToString(format);
-        Console.WriteLine($"{_title} By: {_creator} -- {_length / 60}:{seconds}");
+        Console.WriteLine($"Video Title: {_title}\nCreated By: {_creator} -- Length: {_length / 60}:{seconds}");
+        Console.WriteLine($"Number of Comments: {_comments.Count()}");
         foreach(Comment comment in _comments)
         {
-            comment.GetVideo();
+            comment.GetCommentInfo();
         }
         
         
