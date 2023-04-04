@@ -10,13 +10,10 @@ public abstract class Activity
         _type = type;
     }
 
-
     public abstract double GetDistance();
-
     public abstract double GetSpeed();
-
     public abstract double GetPace();
-  
+      
     public string GetSummary()
     {
         double distance = Math.Round(GetDistance(),1);
