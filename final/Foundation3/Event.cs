@@ -1,27 +1,22 @@
-using System;
-
 public class Event
 {
     private string _title;
     private string _description;
-
     private string _date;
     private string _time;
-    private Address _address;
+    private string _address;
     private string _eventType;
-    //private string _eventSpecificInfo;
-
     
-    public Event(string eventType, string title, string description, string date, string time, Address address)
+    
+    public Event(string eventType, string title, string description, string date, string time, string address)
     {
+        _eventType = eventType;
         _title = title;
         _description = description;
         _date = date;
         _time = time;
         _address = address;
-        _eventType = eventType;
-        //_eventSpecificInfo = eventSpecificInfo;
-
+       
     }
 
     public string GetStandardDetails()

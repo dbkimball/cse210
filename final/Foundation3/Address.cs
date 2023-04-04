@@ -1,5 +1,3 @@
-using System;
-
 public class Address
 {
     private string _street;
@@ -16,9 +14,10 @@ public class Address
 
     }
 
-    public void DisplayAddress()
+    public string DisplayAddress()
     {
-        Console.WriteLine($"{_street}\n{_city}, {_state}, {_zipCode}");
+        string _address = $"{_street}\n{_city}, {_state}, {_zipCode}";
+        return _address;
     }
 
 }

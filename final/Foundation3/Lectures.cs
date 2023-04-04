@@ -1,10 +1,8 @@
-using System;
-
 public class Lectures : Event
 {
     private string _speaker;
     private int _capacity;
-    public Lectures(string eventType, string title, string description, string date, string time, Address address, string speaker, int capacity) : base(eventType, title, description, date, time, address)
+    public Lectures(string eventType, string title, string description, string date, string time, string address, string speaker, int capacity) : base(eventType, title, description, date, time, address)
     {
         _speaker = speaker;
         _capacity = capacity;
@@ -12,8 +10,8 @@ public class Lectures : Event
 
     public string GetLectureFullDetails()
     {
-        string fullDetails = GetFullDetails();
-        return $"{_speaker}\n Capacity: {_capacity}";
+        string lectureDetails = GetFullDetails();
+        return $"{lectureDetails} Speaker: {_speaker}\n Capacity: {_capacity}";
     }
 
 }
